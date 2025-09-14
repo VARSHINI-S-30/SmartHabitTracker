@@ -27,7 +27,8 @@ public class RegisterServlet extends HttpServlet {
         boolean isRegistered = UserDAO.registerUser(newUser);
         if (isRegistered) {
             response.sendRedirect("login.jsp");
-        } else {
+        } 
+        else {
             request.setAttribute("error", "Registration failed.");
             request.getRequestDispatcher("register.jsp").forward(request, response);
         }

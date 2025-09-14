@@ -18,7 +18,8 @@ public class UserDAO {
       ps.setString(4, user.getPassword());
       int rows = ps.executeUpdate();
       return rows > 0;
-    } catch (SQLException e) {
+    } 
+    catch (SQLException e) {
       e.printStackTrace();
       return false;
     }
@@ -34,7 +35,8 @@ public class UserDAO {
       if (rs.next()) {
         return new User(rs.getString("name"), rs.getString("email"), username, password);
       }
-    } catch (SQLException e) {
+    } 
+    catch (SQLException e) {
       e.printStackTrace();
     }
     return null;

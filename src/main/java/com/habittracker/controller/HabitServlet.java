@@ -50,16 +50,19 @@ public class HabitServlet extends HttpServlet {
             int goal = Integer.parseInt(request.getParameter("goal"));
             Habit habit = new Habit(username, habitName, goal);
             HabitDAO.addHabit(habit);
-        } else {
+        } 
+        else {
             int id = Integer.parseInt(request.getParameter("id"));
 
             if ("progress".equals(action)) {
                 HabitDAO.incrementProgress(id);
-            } else if ("edit".equals(action)) {
+            }
+            else if ("edit".equals(action)) {
                 String habitName = request.getParameter("habitName");
                 int goal = Integer.parseInt(request.getParameter("goal"));
                 HabitDAO.updateHabit(id, habitName, goal);
-            } else if ("delete".equals(action)) {
+            } 
+            else if ("delete".equals(action)) {
                 HabitDAO.deleteHabit(id);
             }
         }

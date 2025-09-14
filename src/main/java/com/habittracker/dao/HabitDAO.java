@@ -17,7 +17,8 @@ public class HabitDAO {
             ps.setString(2, habit.getHabitName());
             ps.setInt(3, habit.getGoal());
             ps.executeUpdate();
-        } catch (SQLException e) {
+        } 
+        catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -43,7 +44,8 @@ public class HabitDAO {
                 habits.add(habit);
             }
 
-        } catch (SQLException e) {
+        } 
+        catch (SQLException e) {
             e.printStackTrace();
         }
         return habits;
@@ -56,7 +58,8 @@ public class HabitDAO {
 
             ps.setInt(1, id);
             ps.executeUpdate();
-        } catch (SQLException e) {
+        } 
+        catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -70,7 +73,8 @@ public class HabitDAO {
             ps.setInt(2, goal);
             ps.setInt(3, id);
             ps.executeUpdate();
-        } catch (SQLException e) {
+        } 
+        catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -82,7 +86,8 @@ public class HabitDAO {
 
             ps.setInt(1, id);
             ps.executeUpdate();
-        } catch (SQLException e) {
+        } 
+        catch (SQLException e) {
             e.printStackTrace();
         }
     }

@@ -36,12 +36,14 @@ public class LoginServlet extends HttpServlet {
         ps.setString(2, password);  
         ps.setTimestamp(3, new Timestamp(System.currentTimeMillis()));
         ps.executeUpdate();
-      } catch (Exception e) {
+      } 
+      catch (Exception e) {
         e.printStackTrace();
       }
 
       response.sendRedirect("dashboard.jsp");
-    } else {
+    } 
+    else {
       request.setAttribute("error", "Invalid credentials");
       request.getRequestDispatcher("login.jsp").forward(request, response);
     }
