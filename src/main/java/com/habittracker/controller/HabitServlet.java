@@ -1,22 +1,17 @@
 package com.habittracker.controller;
-
 import com.habittracker.dao.HabitDAO;
 import com.habittracker.model.Habit;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 import java.util.List;
-
 @WebServlet("/HabitServlet")
 public class HabitServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-
     public HabitServlet() {
         super();
     }
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
