@@ -29,6 +29,7 @@ public class LoginServlet extends HttpServlet {
     if (user != null) {
       HttpSession session = request.getSession();
       session.setAttribute("username", user.getUsername());
+      
       try (Connection conn = DBConnection.getConnection()) {
         String sql = "INSERT INTO login_logs (username, password, login_time) VALUES (?, ?, ?)";
         PreparedStatement ps = conn.prepareStatement(sql);
@@ -41,7 +42,7 @@ public class LoginServlet extends HttpServlet {
         e.printStackTrace();
       }
 
-      response.sendRedirect("dashboard.jsp");
+      response.sendRedirect("HabitServlet");
     } 
     else {
       request.setAttribute("error", "Invalid credentials");

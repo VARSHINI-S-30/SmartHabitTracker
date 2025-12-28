@@ -52,11 +52,7 @@ public class HabitServlet extends HttpServlet {
             if ("progress".equals(action)) {
                 HabitDAO.incrementProgress(id);
             }
-            else if ("edit".equals(action)) {
-                String habitName = request.getParameter("habitName");
-                int goal = Integer.parseInt(request.getParameter("goal"));
-                HabitDAO.updateHabit(id, habitName, goal);
-            } 
+            
             else if ("delete".equals(action)) {
                 HabitDAO.deleteHabit(id);
             }
